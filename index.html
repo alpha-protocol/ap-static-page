@@ -34,9 +34,11 @@
     
         <label for="email"><b>Email</b></label>
         <input type="text" placeholder="email@example.com" name="email" required>
-    
-        <button type="submit" class="btn" onclick="closeForm()">Join</button>
-        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        <div class="row" style="display: flex; justify-content: space-between;">
+          <button type="submit" class="btn" onclick="closeForm()">Join</button>
+          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </div>
+       
       </form>
     </div>
 
@@ -104,7 +106,7 @@
                     background-color: hsl(0deg 71% 3%);
                     color: #fff;
                     font-size: 1.1em;
-                    line-height: 1;" disabled placeholder="Join the Private Beta"></input>
+                    line-height: 1;" placeholder="Join the Private Beta"></input>
                   <a id="join-a-input" style="    position: absolute;
                   margin-right: 30%;
                   top: .55em;
@@ -145,7 +147,15 @@
         <div class="row">
           <div class="col-md-8">
             <p class="copyright-text">&copy; 2023 Alpha Protocol</a>. All Rights Reserved.</p>
+            <!-- <ul >
+              <li>
+                <a target="_blank" style="font-size: xxx-large; padding-right: 30px;" rel="noopener noreferrer" href="mailto: https://alphaprotocol.network/"><i class="icon-mail4"></i></a>
+                <a target="_blank" style="font-size: xxx-large; padding-right: 30px;" rel="noopener noreferrer" href="https://alphaprotocol.network/"><i class="icon-twitter-with-circle"></i></a>
+                <a target="_blank" style="font-size: xxx-large; padding-right: 30px;" rel="noopener noreferrer" href="https://alphaprotocol.network/"><i class="icon-youtube-with-circle"></i></a>
+              </li>
+            </ul> -->
           </div>
+          
         </div>
       </div>
     </section>
