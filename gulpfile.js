@@ -1,7 +1,6 @@
 /* Needed gulp config */
-
+var sass = require('gulp-sass')(require('sass'));
 var gulp = require('gulp');  
-var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var notify = require('gulp-notify');
@@ -11,7 +10,6 @@ var plumber = require('gulp-plumber');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 const sourcemaps = require('gulp-sourcemaps');
-const autoprefixer = require('gulp-autoprefixer');
 
 /* Setup scss path */
 var paths = {
@@ -19,7 +17,7 @@ var paths = {
 };
 
 /* Scripts task */
-gulp.task('scripts', function() {
+gulp.task('scripts', async function() {
   return gulp.src([
     /* Add your JS files here, they will be combined in this order */
     'js/vendor/jquery.min.js',
@@ -54,7 +52,7 @@ gulp.task('minify-custom', function() {
 });
 
 /* Sass task */
-gulp.task('sass', function () {  
+gulp.task('sass', async function () {  
     gulp.src('scss/style.scss')
     .pipe(plumber())
     .pipe(sass({
@@ -68,10 +66,6 @@ gulp.task('sass', function () {
     }))
 
     .pipe(sourcemaps.init())
-    .pipe(autoprefixer({
-        browsers: ['last 2 versions'],
-        cascade: false
-    }))
     .pipe(gulp.dest('css'))
 
     .pipe(rename({suffix: '.min'}))
@@ -116,7 +110,7 @@ gulp.task('bs-reload', function () {
 });
 
 /* Prepare Browser-sync for localhost */
-gulp.task('browser-sync', function() {
+gulp.task('browser-sync', async function() {
     browserSync.init(['css/*.css', 'js/*.js'], {
         
         proxy: 'localhost/probootstrap/resto'
@@ -130,11 +124,11 @@ gulp.task('browser-sync', function() {
 });
 
 /* Watch scss, js and html files, doing different things with each. */
-gulp.task('default', ['sass', 'scripts', 'browser-sync'], function () {
+gulp.task('default', gulp.series(['sass', 'scripts', 'browser-sync'], function () {
     /* Watch scss, run the sass task on change. */
-    gulp.watch(['scss/*.scss', 'scss/**/*.scss'], ['sass'])
+    gulp.watch(['scss/*.scss', 'scss/**/*.scss'], gulp.series(['sass']))
     /* Watch app.js file, run the scripts task on change. */
-    gulp.watch(['js/custom.js'], ['minify-custom'])
+    gulp.watch(['js/custom.js'], gulp.series(['minify-custom']))
     /* Watch .html files, run the bs-reload task on change. */
-    gulp.watch(['*.html'], ['bs-reload']);
-});
+    gulp.watch(['*.html'], gulp.series(['bs-reload']));
+}));

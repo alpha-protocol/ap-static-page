@@ -2,6 +2,7 @@
   "devDependencies": {
     "browser-sync": "latest",
     "gulp": "^4.0.2",
+    "sass": "latest",
     "gulp-autoprefixer": "latest",
     "gulp-clean-css": "latest",
     "gulp-concat": "latest",
@@ -12,5 +13,10 @@
     "gulp-sass": "latest",
     "gulp-sourcemaps": "latest",
     "gulp-uglify": "latest"
+  },
+  "browserslist": {
+    "browsers": ["last 2 versions"],
+    "cascade": false
   }
+  
 }

@@ -16,7 +16,81 @@ body {
 	line-height: 24px;
 	font-size: 15px;
 	font-family: $font-primary;
+	@media screen and (max-width: $screen-sm) {
+		width: min-content;
+	}
+	@media screen and (max-width: $screen-xs) {
+		width: min-content;
+	}
 }
+
+
+/* The popup form - hidden by default */
+.form-popup {
+	display: none;
+	position: fixed;
+	left: 45%;
+	top: 30%;
+	border: 1px solid #f1f1f1;
+	z-index: 9;
+	@media screen and (max-width: $screen-sm) {
+		left: 20% !important;
+		top: 20% !important;
+	}
+	@media screen and (max-width: $screen-xs) {
+		left: 20% !important;
+		top: 20% !important;
+	}
+  }
+  
+  /* Add styles to the form container */
+  .form-container {
+	max-width: 300px;
+	padding: 10px;
+	background-color: white;
+  }
+  
+  /* Full-width input fields */
+  .form-container input[type=text]{
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	border: none;
+	background: #f1f1f1;
+	border-radius: 30px;
+  }
+  
+  /* When the inputs get focus, do something */
+  .form-container input[type=text]:focus {
+	background-color: #ddd;
+	outline: none;
+  }
+
+  .form-container input[type=text]::placeholder {
+	color: black;
+  }
+  
+  /* Set a style for the submit/login button */
+  .form-container .btn {
+	background-color: black;
+	color: white;
+	padding: 16px 20px;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	margin-bottom:10px;
+	opacity: 0.8;
+  }
+  
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+	background-color: red;
+  }
+  
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+	opacity: 1;
+  }
 // Typography
 h1, h2, h3, h4, h5, h6 {
 	color: $brand-black;
@@ -75,6 +149,15 @@ a {
 	}
 }
 
+#join-a-input {
+	@media screen and (max-width: $screen-sm) {
+		margin-right: 12% !important
+	}
+	@media screen and (max-width: $screen-xs) {
+		margin-right: 12% !important
+	}
+}
+
 .probootstrap-navbar {
 	border: none;
 	box-shadow: none;
@@ -83,10 +166,7 @@ a {
 	background: none;
 	transition: .3s all;
 
-	@media screen and (max-width: $screen-sm) {
-		background: rgba(255,255,255,1);
-		box-shadow: 0px 2px 10px 0px rgba(0,0,0,.1);
-	}
+	
 
 	// animate hamburger menu
 	.navbar-toggle:focus,
@@ -286,7 +366,8 @@ a {
 		
 
 	}
-
+	
+	
 	// main nav style
 	.navbar-nav {
 		> li {
@@ -644,7 +725,9 @@ section[data-section="menu"] {
 	}
 }
 .probootstrap-copyright {
-	background: lighten($brand-black, 15%);
+	// background: lighten($brand-black, 15%);
+	background: white;
+
 	padding: 20px 0;
 	a {
 		color: rgba(255,255,255,.2);
