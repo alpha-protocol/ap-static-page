@@ -341,12 +341,11 @@ a:hover, a:focus, a:active {
   padding-bottom: 0 !important;
   font-size: 30px;
   text-transform: uppercase;
-  background: url(../img/logo.png) no-repeat left top;
+  background: url(../img/logo1235.png) no-repeat left top;
   top: 40px;
   position: relative;
   max-width: 117px;
   max-height: 80px;
-  border-radius: 50%;
   text-indent: -999999px;
   transition: 0.2s all;
 }
@@ -701,6 +700,7 @@ section[data-section=menu] {
 
 .probootstrap-copyright {
   background: white;
+  text-align: center;
   padding: 20px 0;
 }
 .probootstrap-copyright a {
@@ -1654,15 +1654,27 @@ section[data-section=menu] {
   position: relative;
   z-index: 2;
   background: none;
+  background-size: cover;
   border: none;
   margin: 0 0 0;
+  background-position: center;
+}
+@media screen and (max-width: 992px) {
+  .flexslider {
+    background-image: url(../img/bg-cut.png) !important;
+  }
 }
 .flexslider .probootstrap-slider-text {
   margin-top: 300px;
 }
+@media screen and (max-width: 992px) {
+  .flexslider .probootstrap-slider-text {
+    margin-top: 200px;
+  }
+}
 @media screen and (max-width: 480px) {
   .flexslider .probootstrap-slider-text {
-    margin-top: 150px;
+    margin-top: 200px;
   }
 }
 .flexslider .probootstrap-slider-text .sub-heading {

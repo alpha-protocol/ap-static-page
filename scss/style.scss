@@ -346,12 +346,12 @@ a {
 		padding-bottom: 0!important;
 		font-size: 30px;
 		text-transform: uppercase;
-		background: url(../img/logo.png) no-repeat left top;
+		background: url(../img/logo1235.png) no-repeat left top;
 		top: 40px;
 		position: relative;
 		max-width: 117px;
 		max-height: 80px;
-		border-radius: 50%;
+		// border-radius: 50%;
 		text-indent: -999999px;
 		transition: .2s all;
 		@media screen and (max-width: $screen-sm) {
@@ -727,7 +727,8 @@ section[data-section="menu"] {
 .probootstrap-copyright {
 	// background: lighten($brand-black, 15%);
 	background: white;
-
+	text-align: center;
+	
 	padding: 20px 0;
 	a {
 		color: rgba(255,255,255,.2);
@@ -1721,13 +1722,24 @@ section[data-section="menu"] {
 	position: relative;
 	z-index: 2;
 	background: none;
+	background-size: cover;
   border: none;
   margin: 0 0 0;
+  background-position: center;
   @extend .slider-height;
+  @media screen and (max-width: $screen-md) {
+	background-image: url(../img/bg-cut.png) !important;
+
+  }
   .probootstrap-slider-text {
   	margin-top: 300px;
+	  @media screen and (max-width: $screen-md) {
+		margin-top: 200px;
+		// font-size: large !important;
+	}
   	@media screen and (max-width: $screen-xs) {
-  		margin-top: 150px;
+  		margin-top: 200px;
+		//   font-size: medium !important;
   	}
 
   	.sub-heading {
