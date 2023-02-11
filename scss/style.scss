@@ -1721,12 +1721,12 @@ section[data-section="menu"] {
 .flexslider {
 	position: relative;
 	z-index: 2;
-	background-size: cover;
-
 	background: none;
   border: none;
   margin: 0 0 0;
   background-position: center;
+	background-size: cover;
+
   @extend .slider-height;
   @media screen and (max-width: $screen-md) {
 	background-image: url(../img/bg-cut.png) !important;
