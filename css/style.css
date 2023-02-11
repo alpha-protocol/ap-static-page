@@ -1653,8 +1653,8 @@ section[data-section=menu] {
 .flexslider {
   position: relative;
   z-index: 2;
-  background: none;
   background-size: cover;
+  background: none;
   border: none;
   margin: 0 0 0;
   background-position: center;
